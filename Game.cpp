@@ -1,4 +1,4 @@
-#include "Game_Base.h"
+#include "Game.h"
 using namespace std;
 
 void LogError(string msg, int error_code)
