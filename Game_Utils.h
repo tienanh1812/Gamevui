@@ -1,7 +1,7 @@
 #ifndef GAME_UTILS_H_
 #define GAME_UTILS_H_
 
-#include "Game_Base.h"
+#include "Game.h"
 #include "Button.h"
 #include "Enemy.h"
 #include "Character.h"
