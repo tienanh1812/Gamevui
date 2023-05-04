@@ -10,8 +10,8 @@
 class Character
 {
 public:
-	static const int JUMP_SPEED = 8;
-	static const int FALL_SPEED = 8;
+	static const int JUMP_SPEED = 6;
+	static const int FALL_SPEED = 6;
 
 	Character();
 
