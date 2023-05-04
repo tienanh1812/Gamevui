@@ -23,7 +23,7 @@
 	   g++ $(COMPILER_FLAGS) $(INCLUDE_DIR) $(LIB_DIR) $(OBJS) $(LINKER_FLAGS) -o $(OBJ_NAME)
      
 4, Cách chơi :
-    + Dùng phím mũi tên đi lên để chú khung long nhảy vượt qua chướng ngại vật.
+    + Dùng phím SPACE để chú khung long nhảy vượt qua chướng ngại vật.
     + Điểm số sẽ được ghi lại với số điểm cao nhất mà mình đạt được.
     
 5, Đề xuất hướng cải tạo :
