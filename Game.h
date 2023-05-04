@@ -1,5 +1,5 @@
-#ifndef GAME_BASE_
-#define GAME_BASE_
+#ifndef GAME_
+#define GAME_
 using namespace std;
 
 #include <SDL.h>
