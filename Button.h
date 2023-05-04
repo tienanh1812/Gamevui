@@ -1,7 +1,7 @@
 #ifndef BUTTON_H_
 #define BUTTON_H_
 
-#include "Game_Base.h"
+#include "Game.h"
 #include "LTexture.h"
 
 class Button
