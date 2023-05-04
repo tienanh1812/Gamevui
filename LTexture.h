@@ -1,7 +1,7 @@
 #ifndef LTEXTURE_H_
 #define LTEXTURE_H_
 
-#include "Game_Base.h"
+#include "Game.h"
 
 class LTexture
 {
