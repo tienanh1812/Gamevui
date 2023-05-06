@@ -309,7 +309,7 @@ bool LoadMedia()
 		success = false;
 	}
 
-	gMenuMusic = Mix_LoadMUS("amthanh/sound_menu_audio.wav");
+	gMenuMusic = Mix_LoadMUS("amthanh/among.wav");
 	if (gMenuMusic == nullptr)
 	{
 		LogError("Failed to load menu music", MIX_ERROR);
@@ -323,7 +323,7 @@ bool LoadMedia()
 		success = false;
 	}
 
-	gJump = Mix_LoadWAV("amthanh/anvang.wav");
+	gJump = Mix_LoadWAV("amthanh/anvang1.wav");
 	if (gJump == nullptr)
 	{
 		LogError("Failed to load jumping sound", MIX_ERROR);
