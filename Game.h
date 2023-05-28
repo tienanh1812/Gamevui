@@ -31,15 +31,15 @@ using namespace std;
 #define TIME_INCREASEMENT 1
 #define FRAME_INCREASEMENT 1
 
-#define GROUND_SPEED 5
-#define ENEMY_SPEED 5
+#define GROUND_SPEED 6
+#define ENEMY_SPEED 6
 #define MAX_ENEMY_WIDTH 100
 
 #define IN_AIR_ENEMY 1
 #define ON_GROUND_ENEMY 0
 
-#define SLOW_FRAME_CHAR 4
-#define SLOW_FRAME_ENEMY 4
+#define SLOW_FRAME_CHAR 5
+#define SLOW_FRAME_ENEMY55
 
 #define IS_REPEATITIVE -1
 #define NOT_REPEATITIVE 0
@@ -70,20 +70,20 @@ const int PAUSE_BUTTON_POSY = 29;
 const int CONTINUE_BUTTON_POSX = 31;
 const int CONTINUE_BUTTON_POSY = 29;
 
-const int TEXT_1_POSX = 670;
-const int TEXT_1_POSY = 20;
-const int TEXT_2_POSX = 670;
-const int TEXT_2_POSY = 80;
-const int SCORE_POSX = 830;
-const int SCORE_POSY = 20;
-const int HIGH_SCORE_POSX = 830;
-const int HIGH_SCORE_POSY = 80;
+const int TEXT_1_POSX = 675;
+const int TEXT_1_POSY = 22;
+const int TEXT_2_POSX = 668;
+const int TEXT_2_POSY = 82;
+const int SCORE_POSX = 828;
+const int SCORE_POSY = 22;
+const int HIGH_SCORE_POSX = 832;
+const int HIGH_SCORE_POSY = 8;
 
-const double LAYER_1_SPEED = 0.0;
-const double LAYER_2_SPEED = 0.25; 
-const double LAYER_3_SPEED = 0.5;
-const double LAYER_4_SPEED = 0.75;
-const double LAYER_5_SPEED = 1.0;
+const double LAYER_1_SPEED = 0.05;
+const double LAYER_2_SPEED = 0.24; 
+const double LAYER_3_SPEED = 0.55;
+const double LAYER_4_SPEED = 0.8;
+const double LAYER_5_SPEED = 1.1;
 
 
 const int RUNNING_FRAMES = 6;
