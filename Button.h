@@ -3,6 +3,7 @@
 
 #include "Game.h"
 #include "LTexture.h"
+using namespace std;
 
 class Button
 {
