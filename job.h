@@ -18,13 +18,13 @@ public:
 	Enemy(int _type = 0);
 	
 	~Enemy();
-
+    //tải hình ảnh của kẻ địch từ một đường dẫn và hiển thị lên màn hình.
 	void LoadFromFile(std::string path, SDL_Renderer* gRenderer);
-
+    //để di chuyển kẻ địch với một gia tốc nhất định.
 	void Move(const int& acceleration);
-
+    //để vẽ kẻ địch lên màn hình với một khung hiện tại
 	void Render(SDL_Renderer* gRenderer, SDL_Rect* currentClip = nullptr);
-
+    //Các phương thức getter để truy xuất thông tin về loại kẻ địch, vị trí, kích thước và tốc độ của kẻ địch.
 	int GetType();
 
 	int GetSpeed(const int& acceleration);
