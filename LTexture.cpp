@@ -13,15 +13,7 @@ LTexture::~LTexture()
 	Free();
 }
 
-void LTexture::Free()
-{
-	if (mTexture != nullptr)
-	{
-		mTexture = nullptr;
-		mWidth = 0;
-		mHeight = 0;
-	}
-}
+
 
 bool LTexture::LoadFromRenderedText(string textureText,TTF_Font *gFont, SDL_Color textColor, SDL_Renderer *gRenderer)
 {
@@ -50,6 +42,30 @@ bool LTexture::LoadFromRenderedText(string textureText,TTF_Font *gFont, SDL_Colo
 
 	return mTexture != NULL;
 }
+
+void LTexture::Free()
+{
+	if (mTexture != nullptr)
+	{
+		mTexture = nullptr;
+		mWidth = 0;
+		mHeight = 0;
+	}
+}
+
+void LTexture::Render(int x, int y, SDL_Renderer* gRenderer, SDL_Rect* clip)
+{
+	SDL_Rect renderSpace = { x, y, mWidth, mHeight };
+
+	if (clip != nullptr)
+	{
+		renderSpace.w = clip->w;
+		renderSpace.h = clip->h;
+	}
+
+	SDL_RenderCopy(gRenderer, mTexture, clip, &renderSpace);
+}
+
 
 bool LTexture::LoadFromFile(std::string path, SDL_Renderer *gRenderer)
 {
@@ -85,18 +101,6 @@ bool LTexture::LoadFromFile(std::string path, SDL_Renderer *gRenderer)
 	return mTexture != nullptr;
 }
 
-void LTexture::Render(int x, int y, SDL_Renderer* gRenderer, SDL_Rect* clip)
-{
-	SDL_Rect renderSpace = { x, y, mWidth, mHeight };
-
-	if (clip != nullptr)
-	{
-		renderSpace.w = clip->w;
-		renderSpace.h = clip->h;
-	}
-
-	SDL_RenderCopy(gRenderer, mTexture, clip, &renderSpace);
-}
 
 int LTexture::GetWidth()
 {
