@@ -38,6 +38,32 @@ Enemy::~Enemy()
 	}
 }
 
+
+void Enemy::Move(const int &acceleration)
+{
+	posX += -(ENEMY_SPEED + acceleration);
+	if (posX + MAX_ENEMY_WIDTH < 0)
+	{
+		posX = rand() % (SCREEN_WIDTH + ENEMY_POSITION_RANGE) + SCREEN_WIDTH;
+
+		if (type == IN_AIR_ENEMY)
+		{
+			posY = rand() % (ENEMY_MAX_HEIGHT - ENEMY_MIN_HEIGHT + 1) + ENEMY_MIN_HEIGHT;
+		}
+	}
+}
+
+void Enemy::Render(SDL_Renderer* gRenderer, SDL_Rect* currentClip)
+{
+	SDL_Rect renderSpace = { posX, posY, eWidth, eHeight };
+	if (currentClip != nullptr)
+	{
+		renderSpace.w = currentClip->w;
+		renderSpace.h = currentClip->h;
+	}
+	SDL_RenderCopy(gRenderer, EnemyTexture, currentClip, &renderSpace);
+}
+
 void Enemy::LoadFromFile(std::string path, SDL_Renderer* gRenderer)
 {
 	SDL_Texture* tmpTexture = nullptr;
@@ -68,30 +94,6 @@ void Enemy::LoadFromFile(std::string path, SDL_Renderer* gRenderer)
 	EnemyTexture = tmpTexture;
 }
 
-void Enemy::Move(const int &acceleration)
-{
-	posX += -(ENEMY_SPEED + acceleration);
-	if (posX + MAX_ENEMY_WIDTH < 0)
-	{
-		posX = rand() % (SCREEN_WIDTH + ENEMY_POSITION_RANGE) + SCREEN_WIDTH;
-
-		if (type == IN_AIR_ENEMY)
-		{
-			posY = rand() % (ENEMY_MAX_HEIGHT - ENEMY_MIN_HEIGHT + 1) + ENEMY_MIN_HEIGHT;
-		}
-	}
-}
-
-void Enemy::Render(SDL_Renderer* gRenderer, SDL_Rect* currentClip)
-{
-	SDL_Rect renderSpace = { posX, posY, eWidth, eHeight };
-	if (currentClip != nullptr)
-	{
-		renderSpace.w = currentClip->w;
-		renderSpace.h = currentClip->h;
-	}
-	SDL_RenderCopy(gRenderer, EnemyTexture, currentClip, &renderSpace);
-}
 
 int Enemy::GetType()
 {
@@ -109,7 +111,15 @@ int Enemy::GetSpeed(const int &acceleration)
 {
 	return ENEMY_SPEED + acceleration;
 }
+int Enemy::GetWidth()
+{
+	return eWidth;
+}
 
+int Enemy::GetHeight()
+{
+	return eHeight;
+}
 int Enemy::GetPosX()
 {
 	return posX;
@@ -120,12 +130,3 @@ int Enemy::GetPosY()
 	return posY;
 }
 
-int Enemy::GetWidth()
-{
-	return eWidth;
-}
-
-int Enemy::GetHeight()
-{
-	return eHeight;
-}
